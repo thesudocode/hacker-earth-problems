@@ -1,11 +1,12 @@
-package com.iamoperand.com.hackerearth.iamoperand;
+package com.iamoperand.com.hackerearth.iamoperand.Arrays_Strings;
+
 
 /**
  * Created by iamoperand on 2/7/17.
  */
 
 import java.util.*;
-public class HackerEarth3 {
+public class Problem3 {
 
     static int count = 0, temp = 0, laterCount = 0, totalCount = 0;
 

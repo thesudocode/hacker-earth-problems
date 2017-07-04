@@ -1,8 +1,8 @@
-package com.iamoperand.com.hackerearth.iamoperand;
+package com.iamoperand.com.hackerearth.iamoperand.Arrays_Strings;
 
 import java.util.*;
 
-class HackerEarth1 {
+class Problem1 {
 
     static void swap(int pos, char[] str){
 

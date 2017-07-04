@@ -1,11 +1,11 @@
-package com.iamoperand.com.hackerearth.iamoperand;
+package com.iamoperand.com.hackerearth.iamoperand.Arrays_Strings;
 
 /**
  * Created by iamoperand on 2/7/17.
  */
 
 import java.util.*;
-public class HackerEarth2 {
+public class Problem2 {
 
 
     static void delete(char[] charArray, int pos){
