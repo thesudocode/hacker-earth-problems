@@ -1,7 +1,5 @@
 package com.iamoperand.com.hackerearth.iamoperand.Sorting;
 
-import jdk.nashorn.internal.runtime.arrays.ArrayIndex;
-
 import java.util.*;
 
 /**
