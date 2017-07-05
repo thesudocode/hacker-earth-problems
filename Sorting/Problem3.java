@@ -24,7 +24,6 @@ public class Problem3 {
         //the 2 rows of the collectionArray have the 2 arrays that need to be merged
 
         int sortedSize = collectionArray[0].length + collectionArray[1].length;
-        System.out.println("sortedArraysize: " + sortedSize);
         int[] sortedArray = new int[sortedSize];
 
         int[] firstArray = new int[collectionArray[0].length];
@@ -33,11 +32,9 @@ public class Problem3 {
         for(int l=0; l<collectionArray[0].length; l++){
             firstArray[l] = collectionArray[0][l];
         }
-        printArray(firstArray);
         for(int m=0; m<collectionArray[1].length; m++){
             secondArray[m] = collectionArray[1][m];
         }
-        printArray(secondArray);
         int i = 0, j = 0, k = 0;
         while(i < firstArray.length && j<secondArray.length){
 
@@ -46,13 +43,11 @@ public class Problem3 {
 
                 if(firstArray[i] > secondArray[j]){
                     sortedArray[k] = firstArray[i];
-                    System.out.println("firstArray[i] is: " + firstArray[i]);
                     i++;
                 }else{
                     sortedArray[k] = secondArray[j];
                     j++;
                 }
-                System.out.println("sortedArray: " + sortedArray[k]);
                 k++;
 
 
@@ -63,7 +58,7 @@ public class Problem3 {
         while(i < firstArray.length){
 
             sortedArray[k] = firstArray[i];
-            System.out.println("sortedArray: " + sortedArray[k]);
+
             i++;
             k++;
         }
@@ -71,7 +66,7 @@ public class Problem3 {
         while(j < secondArray.length){
 
             sortedArray[k] = secondArray[j];
-            System.out.println("sortedArray: " + sortedArray[k]);
+
             j++;
             k++;
         }
@@ -112,7 +107,6 @@ public class Problem3 {
                     list.add(Integer.parseInt(s));
                 }
                 int size = list.size();
-                System.out.println("The size is: " + size);
                 collectionArray[j] = new int[size];
                 for (int k = 0; k <list.size(); k++) {
                     int value = list.get(k);
@@ -123,7 +117,6 @@ public class Problem3 {
 
 
 
-        printIntegerArrays(collectionArray);
         mergeArrays(collectionArray);
 
     }
