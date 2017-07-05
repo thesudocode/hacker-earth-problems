@@ -9,6 +9,19 @@ import java.util.*;
  */
 public class Problem3 {
 
+    static void mergeArrays(int[][] collectionArray){
+        //the 2 rows of the collectionArray have the 2 arrays that need to be merged
+
+
+
+        for(int i=0; i<collectionArray.length; i++){
+
+            for(int j=0; j<collectionArray[i].length; j++){
+                System.out.print(collectionArray[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
 
     static void printIntegerArrays(int[][] collectionArray){
 
@@ -26,7 +39,6 @@ public class Problem3 {
 
 
         //get the 2 arrays separately
-
 
         //looping through the test cases
         for(int i=0; i<stringArray.length; i++){
@@ -48,7 +60,11 @@ public class Problem3 {
             }
         }
 
+
+        mergeArrays(collectionArray);
         printIntegerArrays(collectionArray);
+
+
     }
     static void printArrays(String[][] stringArray){
 
