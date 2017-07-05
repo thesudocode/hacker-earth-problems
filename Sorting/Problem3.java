@@ -1,5 +1,7 @@
 package com.iamoperand.com.hackerearth.iamoperand.Sorting;
 
+import jdk.nashorn.internal.runtime.arrays.ArrayIndex;
+
 import java.util.*;
 
 /**
@@ -7,17 +9,46 @@ import java.util.*;
  */
 public class Problem3 {
 
+
+    static void printIntegerArrays(int[][] collectionArray){
+
+        for(int i=0; i<collectionArray.length; i++){
+
+            for(int j=0; j<collectionArray[i].length; j++){
+                System.out.print(collectionArray[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
     static void merge(String[][] stringArray){
 
+        int[][] collectionArray = new int[2][];
 
 
         //get the 2 arrays separately
+
+
+        //looping through the test cases
         for(int i=0; i<stringArray.length; i++){
 
+            //looping through the 2 stringArrays in a particular test-case
             for(int j=0; j<stringArray[i].length; j++){
-
+                ArrayList<Integer> list = new ArrayList<Integer>();
+                for (String s : stringArray[i][j].split("\\s"))
+                {
+                    list.add(Integer.parseInt(s));
+                }
+                int size = list.size();
+                System.out.println("The size is: " + size);
+                collectionArray[j] = new int[size];
+                for (int k = 0; k <list.size(); k++) {
+                    int value = list.get(k);
+                    collectionArray[j][k] = value;
+                }
             }
         }
+
+        printIntegerArrays(collectionArray);
     }
     static void printArrays(String[][] stringArray){
 
