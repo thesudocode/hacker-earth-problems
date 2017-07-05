@@ -48,8 +48,6 @@ public class Problem2 {
                 int count = 0;
                 for(int k=(j+1); k<individualArray.length; k++){
                     if(max <= individualArray[k]){
-                        break;
-                    }else{
                         count++;
                     }
 
