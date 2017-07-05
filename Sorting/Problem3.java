@@ -20,7 +20,7 @@ public class Problem3 {
         System.out.println();
     }
 
-    static void mergeArrays(int[][] collectionArray){
+    static int[] mergeArrays(int[][] collectionArray){
         //the 2 rows of the collectionArray have the 2 arrays that need to be merged
 
         int sortedSize = collectionArray[0].length + collectionArray[1].length;
@@ -71,12 +71,7 @@ public class Problem3 {
             k++;
         }
 
-        for(int iterator=0; iterator<sortedArray.length; iterator++){
-
-            System.out.print(sortedArray[iterator] + " ");
-
-        }
-        System.out.println();
+        return sortedArray;
     }
 
     static void printIntegerArrays(int[][] collectionArray){
@@ -113,12 +108,28 @@ public class Problem3 {
                     collectionArray[j][k] = value;
                 }
             }
+            int[] sortedArray = mergeArrays(collectionArray);
+
+            stringArray[i][0] = "";
+            for(int newIterator=0; newIterator<sortedArray.length; newIterator++){
+                //System.out.println("at position: " + newIterator + " value of sorted Array is: " + sortedArray[newIterator]);
+                stringArray[i][0] += sortedArray[newIterator] + " ";
+                //System.out.println("stringArray[i][0] is: " + stringArray[i][0]);
+            }
         }
 
 
 
-        mergeArrays(collectionArray);
+        printStringArrays(stringArray);
 
+    }
+
+    static void printStringArrays(String[][] stringArray){
+        for(int i=0; i<stringArray.length; i++){
+
+                System.out.println(stringArray[i][0]);
+
+        }
     }
     static void printArrays(String[][] stringArray){
 
