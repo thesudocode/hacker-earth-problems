@@ -7,9 +7,98 @@ package com.iamoperand.com.hackerearth.iamoperand.Sorting;
 import java.util.*;
 public class Problem4 {
 
+    static void incrementEachColumn(int[] columnSumArray){
+
+        for(int i=0; i<columnSumArray.length; i++){
+            columnSumArray[i]++;
+        }
+    }
+
+    static void incrementEachRow(int[] rowSumArray){
+        for(int i=0; i<rowSumArray.length; i++){
+            rowSumArray[i]++;
+        }
+    }
+
+    static void incrementRow(int index, int[] rowSumArray){
+        int count = 0;
+        while(count < rowSumArray.length){
+            rowSumArray[index]++;
+            count++;
+        }
+    }
+
+    static void incrementColumn(int index, int[] columnSumArray){
+        int count = 0;
+        while(count < columnSumArray.length){
+            columnSumArray[index]++;
+            count++;
+        }
+    }
+
+    static String getMin(int[] rowSumArray, int[] columnSumArray){
+
+        String finalResult = "";
+        int rowMin = rowSumArray[0];
+        int rowIndex = 0;
+        for(int i=1; i<rowSumArray.length; i++){
+            if(rowSumArray[i] < rowMin){
+                rowMin = rowSumArray[i];
+                rowIndex = i;
+            }
+        }
+
+        int columnMin = columnSumArray[0];
+        int columnIndex = 0;
+        for(int i=1; i<columnSumArray.length; i++){
+            if(columnSumArray[i] < columnMin){
+                columnMin = columnSumArray[i];
+                columnIndex = i;
+            }
+        }
+       // System.out.println("rowMin: " + rowMin);
+       // System.out.println("colMin: " + columnMin);
+        if(rowMin<columnMin){
+            finalResult = 1 + " " + rowIndex + " " + rowMin;
+        }else{
+            finalResult = 0 + " " + columnIndex + " " + columnMin;
+        }
+
+        return finalResult;
+    }
     static int decreaseCurse(int[] rowSumArray, int[] columnSumArray, int curse){
 
+        String resultString = "";
+        int[] fetchedArray = new int[3];
+        int finalResult = 0;
+        while(curse > 0){
 
+
+            resultString = getMin(rowSumArray, columnSumArray);
+         //   System.out.println("resultString is: " + resultString);
+            int i =0;
+            for (String s : resultString.split("\\s")) {
+                fetchedArray[i]  = (Integer.parseInt(s));
+                i++;
+            }
+
+            if(fetchedArray[0] == 1){
+                //row was chosen to be minimum
+
+                finalResult += fetchedArray[2];
+                incrementRow(fetchedArray[1], rowSumArray);
+                incrementEachColumn(columnSumArray);
+            }else if(fetchedArray[0] == 0){
+                //column was chosen to be minimum
+
+                finalResult += fetchedArray[2];
+                incrementColumn(fetchedArray[1], columnSumArray);
+                incrementEachRow(rowSumArray);
+            }
+            //System.out.println("finalResult is: " + finalResult);
+            curse--;
+        }
+        return finalResult;
     }
     static int getColumnSum(int N, int index, int[] array){
         int sum = 0;
@@ -71,7 +160,7 @@ public class Problem4 {
         }
 
         //check by printing the array
-        printFinalArray(finalArray);
+        //printFinalArray(finalArray);
 
         //Now implement the main functionality
 
@@ -89,7 +178,7 @@ public class Problem4 {
                 columnSum[index] = getColumnSum(N, index, finalArray[i]);
 
                 //checking the columnSum
-                System.out.println("The column sum of index: " + index + " is: " + columnSum[index]);
+              //  System.out.println("The column sum of index: " + index + " is: " + columnSum[index]);
             }
 
 
@@ -101,7 +190,7 @@ public class Problem4 {
                 rowSum[index] = getRowSum(N, index, finalArray[i]);
 
                 //checking the rowSum
-                System.out.println("The row sum of index: " + index + " is: " + rowSum[index]);
+                //System.out.println("The row sum of index: " + index + " is: " + rowSum[index]);
             }
 
 
