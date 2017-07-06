@@ -7,6 +7,10 @@ package com.iamoperand.com.hackerearth.iamoperand.Sorting;
 import java.util.*;
 public class Problem4 {
 
+    static int decreaseCurse(int[] rowSumArray, int[] columnSumArray, int curse){
+
+
+    }
     static int getColumnSum(int N, int index, int[] array){
         int sum = 0;
 
@@ -99,6 +103,10 @@ public class Problem4 {
                 //checking the rowSum
                 System.out.println("The row sum of index: " + index + " is: " + rowSum[index]);
             }
+
+
+            int val = decreaseCurse(rowSum, columnSum, curseArray[i]);
+            System.out.println(val);
         }
 
 
