@@ -7,10 +7,43 @@ package com.iamoperand.com.hackerearth.iamoperand.Sorting;
 import java.util.*;
 public class Problem4 {
 
-    static void mainLogic(int[] curseArray, String[] theMatrix){
+    static void printFinalArray(int[][] finalArray) {
 
+        for (int i = 0; i < finalArray.length; i++) {
 
+            for (int j = 0; j < finalArray[i].length; j++) {
+
+                System.out.print(finalArray[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
+
+    static void mainLogic(int[] curseArray, String[] theMatrix) {
+
+
+        int[][] finalArray = new int[theMatrix.length][];
+
+
+        for (int i = 0; i < theMatrix.length; i++) {
+            ArrayList<Integer> list = new ArrayList<Integer>();
+            for (String s : theMatrix[i].split("\\s")) {
+                list.add(Integer.parseInt(s));
+            }
+            int size = list.size();
+
+            finalArray[i] = new int[size];
+            for (int k = 0; k < size; k++) {
+                int value = list.get(k);
+                finalArray[i][k] = value;
+            }
+        }
+        printFinalArray(finalArray);
+    }
+
+
+
+
 
 
     static void printMatrixString(String[] matrixString){
@@ -52,7 +85,7 @@ public class Problem4 {
         }
 
         //check by printing the Matrix string that we got
-        printMatrixString(theMatrix);
+        //printMatrixString(theMatrix);
 
         //where the main logic goes
         mainLogic(curseArray, theMatrix);
