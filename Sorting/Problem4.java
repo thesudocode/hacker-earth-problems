@@ -7,6 +7,33 @@ package com.iamoperand.com.hackerearth.iamoperand.Sorting;
 import java.util.*;
 public class Problem4 {
 
+    static int getColumnSum(int N, int index, int[] array){
+        int sum = 0;
+
+
+        int count = 0;
+        while(count < N){
+            sum += array[index + count*N];
+            count++;
+        }
+
+        return sum;
+    }
+
+    static int getRowSum(int N, int index, int[] array){
+
+        int sum = 0;
+
+
+        int count = 0;
+        while(count < N){
+            sum += array[index*N + count];
+            count++;
+        }
+
+        return sum;
+    }
+
     static void printFinalArray(int[][] finalArray) {
 
         for (int i = 0; i < finalArray.length; i++) {
@@ -38,7 +65,44 @@ public class Problem4 {
                 finalArray[i][k] = value;
             }
         }
+
+        //check by printing the array
         printFinalArray(finalArray);
+
+        //Now implement the main functionality
+
+        //Going to the individual Test-Cases to implement the functionality for each of them
+        for(int i=0; i<finalArray.length; i++){
+
+            //get the size of the matrix ie. getting the N in N-by-N
+            int N = (int) Math.sqrt(finalArray[i].length);
+
+            //get individual column sum
+            int[] columnSum = new int[N];
+
+            for(int index=0; index<columnSum.length; index++){
+
+                columnSum[index] = getColumnSum(N, index, finalArray[i]);
+
+                //checking the columnSum
+                System.out.println("The column sum of index: " + index + " is: " + columnSum[index]);
+            }
+
+
+
+            //get individual row sum
+            int[] rowSum = new int[N];
+            for(int index=0; index<rowSum.length; index++){
+
+                rowSum[index] = getRowSum(N, index, finalArray[i]);
+
+                //checking the rowSum
+                System.out.println("The row sum of index: " + index + " is: " + rowSum[index]);
+            }
+        }
+
+
+
     }
 
 
