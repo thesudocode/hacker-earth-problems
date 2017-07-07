@@ -7,6 +7,15 @@ import java.util.Scanner;
  */
 public class Problem3 {
 
+    static int findMax(int[] array){
+        int max = array[0];
+        for(int i=1; i<array.length; i++){
+            if(array[i] > max){
+                max = array[i];
+            }
+        }
+        return max;
+    }
     static void findMonkiness(int[][] A, int[][] B){
 
 
@@ -25,8 +34,9 @@ public class Problem3 {
                 }
 
             }
-            printArray(monkinessArray);
-
+            //printArray(monkinessArray);
+            int max = findMax(monkinessArray);
+            System.out.println(max);
         }
 
     }
@@ -40,7 +50,10 @@ public class Problem3 {
         for(int i=0; i<array.length; i++){
 
             for(int j=0; j<array[i].length; j++){
+                System.out.println(j);
                 System.out.print(array[i][j] + " ");
+
+
             }
             System.out.println();
         }
@@ -60,19 +73,18 @@ public class Problem3 {
 
             for(int j=0; j<N; j++){
                A[i][j] = scanner.nextInt();
-
+              //  System.out.println("Taking input in A at: " + j);
             }
 
             for(int j=0; j<N; j++){
                 B[i][j] = scanner.nextInt();
-
+            //System.out.println("Taking input in B");
             }
 
-            printIntegerArray(A);
-            printIntegerArray(B);
 
-            findMonkiness(A, B);
 
         }
+        findMonkiness(A, B);
+
     }
 }
