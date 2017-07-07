@@ -6,6 +6,11 @@ import java.util.Scanner;
  * Created by iamoperand on 7/7/17.
  */
 public class Problem4 {
+
+    static void performLogic(int[] templePositions, int noOfMonks){
+
+    }
+
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         int N = scanner.nextInt();
@@ -17,6 +22,6 @@ public class Problem4 {
             templePositions[i] = scanner.nextInt();
         }
 
-
+        performLogic(templePositions, K);
     }
 }
