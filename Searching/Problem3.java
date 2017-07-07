@@ -7,7 +7,36 @@ import java.util.Scanner;
  */
 public class Problem3 {
 
-    static void printIntegerArrays(int[][] array){
+    static void findMonkiness(int[][] A, int[][] B){
+
+
+        for(int i=0; i<A.length; i++){
+            int[] monkinessArray = new int[(int) Math.pow(A[i].length, 2)];
+            for(int j=0; j<A[i].length; j++){
+
+                for(int k=0; k<B[i].length; k++){
+
+                        if(k>=j && B[i][k]>=A[i][j]){
+                            monkinessArray[j*A[i].length + k] = k-j;
+                        }else{
+                            monkinessArray[j*A[i].length + k] = 0;
+                        }
+
+                }
+
+            }
+            printArray(monkinessArray);
+
+        }
+
+    }
+    static void printArray(int[] array){
+        for(int i=0; i<array.length; i++){
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+    static void printIntegerArray(int[][] array){
         for(int i=0; i<array.length; i++){
 
             for(int j=0; j<array[i].length; j++){
@@ -39,8 +68,11 @@ public class Problem3 {
 
             }
 
-            printIntegerArrays(A);
-            printIntegerArrays(B);
+            printIntegerArray(A);
+            printIntegerArray(B);
+
+            findMonkiness(A, B);
+
         }
     }
 }
