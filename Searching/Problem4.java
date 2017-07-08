@@ -9,6 +9,21 @@ public class Problem4 {
 
     static void performLogic(int[] templePositions, int noOfMonks){
 
+        int range = 0;
+
+        while(range < Integer.MAX_VALUE){
+
+
+            for(int i=0; i<templePositions.length-1; i++){
+
+                int pos = (templePositions[i+1] - templePositions[i]) / 2;
+
+            }
+
+
+
+            range++;
+        }
     }
 
     public static void main(String[] args){
